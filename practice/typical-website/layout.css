@@ -1,0 +1,60 @@
+/* Body Settings */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: 100px;
+  padding: 0px 30px;
+  background-color: #2061c3;
+  color: white;
+}
+
+ul.nav-list {
+  list-style-type: none;
+}
+
+.push-left {
+  margin-right: auto;
+}
+
+.contents {
+  display: contents;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Main */
+
+main {
+  flex: 1;
+  margin: 20px;
+  padding: 20px 30px;
+}
+
+/* Footer */
+
+footer {
+  height: 75px;
+  padding: 20px 30px;
+  background-color: #2061c3;
+  text-align: center;
+}
