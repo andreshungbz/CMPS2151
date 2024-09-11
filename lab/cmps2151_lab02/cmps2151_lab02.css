@@ -1,0 +1,153 @@
+/* Andres Hung / CMPS2151 Section 2 */
+
+* {
+  box-sizing: border-box;
+}
+body,
+section,
+header,
+div,
+p,
+h1,
+h2,
+h3,
+ul,
+li,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  background-color: #f0f4f8;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* add styles here */
+
+/* HEADER section */
+
+header {
+  width: 100%;
+  min-height: 500px;
+  background-image: url(./images/florence.jpg);
+  background-size: cover;
+}
+
+/* NAV bar */
+
+nav#topbar {
+  height: 70px;
+  padding: 20px 20px 20px 80px;
+  background-image: url(./images/logo.png);
+  background-repeat: no-repeat;
+  background-size: 60px;
+}
+
+nav#topbar ul li {
+  display: inline-block;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+/* NAV links */
+
+nav#topbar ul li a:link,
+nav#topbar ul li a:visited {
+  font-weight: bold;
+  color: #51279b;
+  text-decoration: none;
+}
+
+nav#topbar ul li a:hover {
+  color: #8662c7;
+}
+
+/* HERO styling */
+
+header > div {
+  margin-top: 150px;
+  margin-left: 110px;
+  font-size: 24px;
+  color: white;
+}
+
+header > div h2 {
+  font-size: 48px;
+}
+
+/* HERO link */
+
+header > div a:link,
+header > div a:visited {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 15px 20px;
+  background-color: #51279b;
+  color: white;
+  text-decoration: none;
+}
+
+header > div a:hover {
+  background-color: #8662c7;
+}
+
+/* MAIN section */
+
+main {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* CARD styling */
+
+section.card {
+  display: inline-block;
+  width: 33%;
+}
+
+section.card img {
+  width: 100%;
+}
+
+section.card > div {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+section.card > div h3 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+section.card > div p.description {
+  font-size: 12px;
+}
+
+section.card > div p.social {
+  padding: 5px;
+  font-size: 10px;
+}
+
+/* SOCIAL ICONS styling */
+
+p.social span {
+  background-repeat: no-repeat;
+  background-size: 15px;
+}
+
+p.social span.heart {
+  padding-left: 20px;
+  background-image: url(./images/heart.png);
+  background-position: left;
+}
+
+p.social span.comment {
+  padding-left: 35px;
+  background-image: url(./images/comment.png);
+  background-repeat: no-repeat;
+  background-position: 45%;
+  background-size: 15px;
+}
