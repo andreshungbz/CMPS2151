@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.1.1 CSS Contact Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <form action="https://webdevbasics.net/scripts/demo.php" method="POST">
+      <label for="myName">Name:</label>
+      <input type="text" name="myName" id="myName" />
+
+      <label for="myEmail">Email:</label>
+      <input type="email" name="myEmail" id="myEmail" />
+
+      <label for="myComments">Comments:</label>
+      <textarea
+        name="myComments"
+        id="myCommpents"
+        rows="3"
+        cols="26"
+      ></textarea>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
