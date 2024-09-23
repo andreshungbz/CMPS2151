@@ -3,24 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11.1.1 CSS Contact Form</title>
+    <title>Comment Form</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Contact Us</h1>
+    <h1>Send Us Your Comments</h1>
+    <p>Required fields are marked with an asterisk *.</p>
     <form action="https://webdevbasics.net/scripts/demo.php" method="POST">
-      <label for="myName">Name:</label>
-      <input type="text" name="myName" id="myName" />
+      <label for="myName">*Name:</label>
+      <input
+        type="text"
+        name="myName"
+        id="myName"
+        placeholder="Andres Hung"
+        required
+      />
 
-      <label for="myEmail">Email:</label>
-      <input type="email" name="myEmail" id="myEmail" />
+      <label for="myEmail">*Email:</label>
+      <input
+        type="email"
+        name="myEmail"
+        id="myEmail"
+        placeholder="andreshung@mail.com"
+        required
+      />
 
-      <label for="myComments">Comments:</label>
+      <label for="myRating">Rating (1 - 10):</label>
+      <input type="range" name="myRating" id="myRating" min="1" max="10" />
+
+      <label for="myComments">*Comments:</label>
       <textarea
         name="myComments"
         id="myCommpents"
         rows="3"
         cols="26"
+        required
       ></textarea>
 
       <input type="submit" value="Submit" />
