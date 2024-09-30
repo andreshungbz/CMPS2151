@@ -27,11 +27,11 @@ $layout-gap: 1em;
 }
 
 .portfolio button {
+  margin: 0 15px;
+  padding: 8px;
+  background-color: rgb(51, 149, 255);
   border: none;
   color: white;
-  background-color: rgb(51, 149, 255);
-  padding: 8px;
-  margin: 0 15px;
 }
 
 .portfolio button:hover {

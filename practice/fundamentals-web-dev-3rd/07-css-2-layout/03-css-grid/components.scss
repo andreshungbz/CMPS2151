@@ -6,28 +6,28 @@ $aside-color: rgb(0, 80, 192);
 
 .container {
   display: grid;
-  grid-template-columns: 100px auto;
   gap: $layout-gap;
+  grid-template-columns: 100px auto;
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(6, minmax(150px, 250px));
   gap: $layout-gap;
+  grid-template-columns: repeat(6, minmax(150px, 250px));
   height: 100%;
 }
 
 // dashboard
 
 .dashboard {
-  grid-column: span 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  grid-column: span 2;
   height: 65px;
+  padding: 0 20px;
   background-color: $header-footer-color;
   color: white;
-  padding: 0 20px;
 }
 
 .dashboard > div {
@@ -36,10 +36,10 @@ main {
 }
 
 .dashboard img {
-  color: white;
-  height: 20px;
-  width: 20px;
   opacity: 35%;
+  width: 20px;
+  height: 20px;
+  color: white;
 }
 
 // menu aside bar
@@ -47,31 +47,31 @@ main {
 .menu {
   display: flex;
   flex-direction: column;
-  background-color: $aside-color;
-  color: white;
   justify-content: start;
   align-items: center;
   gap: $layout-gap;
+  background-color: $aside-color;
+  color: white;
 }
 
 .menu > div {
-  text-align: center; // for portfolio link
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center; // for portfolio link;
 }
 
 .menu img {
-  color: white;
   opacity: 35%;
-  height: 30px;
   width: 30px;
+  height: 30px;
+  color: white;
 }
 
 .menu a:link,
 .menu a:visited {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
 .menu a:hover img {
@@ -82,9 +82,9 @@ main {
 
 footer {
   grid-column: span 6;
+  padding: 20px 15px;
   background-color: $header-footer-color;
   color: white;
-  padding: 20px 15px;
 }
 
 // widgets

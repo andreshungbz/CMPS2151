@@ -88,26 +88,26 @@ h4 {
 
 .container {
   display: grid;
-  grid-template-columns: 100px auto;
   gap: 1em;
+  grid-template-columns: 100px auto;
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(6, minmax(150px, 250px));
   gap: 1em;
+  grid-template-columns: repeat(6, minmax(150px, 250px));
   height: 100%;
 }
 
 .dashboard {
-  grid-column: span 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  grid-column: span 2;
   height: 65px;
+  padding: 0 20px;
   background-color: rgb(53, 61, 92);
   color: white;
-  padding: 0 20px;
 }
 
 .dashboard > div {
@@ -116,40 +116,40 @@ main {
 }
 
 .dashboard img {
-  color: white;
-  height: 20px;
-  width: 20px;
   opacity: 35%;
+  width: 20px;
+  height: 20px;
+  color: white;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  background-color: rgb(0, 80, 192);
-  color: white;
   justify-content: start;
   align-items: center;
   gap: 1em;
+  background-color: rgb(0, 80, 192);
+  color: white;
 }
 
 .menu > div {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .menu img {
-  color: white;
   opacity: 35%;
-  height: 30px;
   width: 30px;
+  height: 30px;
+  color: white;
 }
 
 .menu a:link,
 .menu a:visited {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
 .menu a:hover img {
@@ -158,9 +158,9 @@ main {
 
 footer {
   grid-column: span 6;
+  padding: 20px 15px;
   background-color: rgb(53, 61, 92);
   color: white;
-  padding: 20px 15px;
 }
 
 .widget {
@@ -209,11 +209,11 @@ footer {
 }
 
 .portfolio button {
+  margin: 0 15px;
+  padding: 8px;
+  background-color: rgb(51, 149, 255);
   border: none;
   color: white;
-  background-color: rgb(51, 149, 255);
-  padding: 8px;
-  margin: 0 15px;
 }
 
 .portfolio button:hover {
