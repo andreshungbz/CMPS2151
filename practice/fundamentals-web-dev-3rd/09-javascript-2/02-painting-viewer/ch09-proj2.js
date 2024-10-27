@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const figure = document.querySelector('#details figure'); // grab figure
   const description = document.querySelector('#description'); // grab description
+  const title = document.querySelector('#summary #title'); // grab title h2
+  const artist = document.querySelector('#summary #artist'); // grab artist h3
 
   ul.addEventListener('click', (e) => {
     // do something only if it is an img node that is clicked
@@ -33,10 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         (element) => element.id == e.target.dataset.id
       );
 
-      // create and append large image to figure
+      // set title and artist
+      title.textContent = painting.title;
+      artist.textContent = `By ${painting.artist}`;
+
+      // create and append large to figure
       const figureImg = document.createElement('img');
       figureImg.setAttribute('src', `./images/large/${painting.id}.jpg`);
       figureImg.setAttribute('alt', painting.title);
+
       figure.appendChild(figureImg);
 
       // create and append feature boxes to figure
