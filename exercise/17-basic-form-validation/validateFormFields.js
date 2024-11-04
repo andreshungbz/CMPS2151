@@ -1,5 +1,6 @@
 const inputField = document.querySelector('#value1');
 const errorOutput = document.querySelector('#errorOutput');
+const submitButton = document.querySelector('input[type="submit"]');
 
 function alphanumeric(inputText) {
   const regex = /^[0-9a-zA-Z]+$/;
@@ -14,7 +15,6 @@ function alphanumeric(inputText) {
   }
 }
 
-const submitButton = document.querySelector('input[type="submit"]');
 submitButton.addEventListener('click', (e) => {
   if (!alphanumeric(inputField.value)) {
     e.preventDefault();
