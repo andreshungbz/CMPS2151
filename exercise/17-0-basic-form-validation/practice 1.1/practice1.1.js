@@ -15,15 +15,17 @@ const passwordConfirmField = document.querySelector('#pwd2');
 const message = document.querySelector('#message');
 
 submitButton.addEventListener('click', (e) => {
-  const regex = new RegExp(passwordField.pattern);
-  if (!passwordField.value.match(regex)) {
-    e.preventDefault();
-    message.innerHTML =
-      'Your password must be at least 8 characters with at least one letter and one number';
+  // const regex = new RegExp(passwordField.pattern);
+  // can use passwordField.validity.pattrenMismatch
+  if (passwordField.validity.patternMismatch) {
+    passwordField.setCustomValidity(
+      'Your password must be at least 8 characters with at least one letter and one number'
+    );
   } else if (passwordField.value != passwordConfirmField.value) {
-    e.preventDefault();
-    message.innerHTML = 'Your password confirmation does not match';
+    passwordConfirmField.setCustomValidity(
+      'Your password confirmation does not match'
+    );
   } else {
-    message.innerHTML = '';
+    passwordField.setCustomValidity('');
   }
 });
