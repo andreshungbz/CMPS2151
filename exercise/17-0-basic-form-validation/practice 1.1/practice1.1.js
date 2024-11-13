@@ -15,8 +15,6 @@ const passwordConfirmField = document.querySelector('#pwd2');
 const message = document.querySelector('#message');
 
 submitButton.addEventListener('click', (e) => {
-  // const regex = new RegExp(passwordField.pattern);
-  // can use passwordField.validity.pattrenMismatch
   if (passwordField.validity.patternMismatch) {
     passwordField.setCustomValidity(
       'Your password must be at least 8 characters with at least one letter and one number'
@@ -27,5 +25,8 @@ submitButton.addEventListener('click', (e) => {
     );
   } else {
     passwordField.setCustomValidity('');
+    passwordConfirmField.setCustomValidity(''); // Reset custom validity for passwordConfirmField
+    // Optionally, you can submit the form programmatically here if needed
+    e.target.form.submit();
   }
 });
