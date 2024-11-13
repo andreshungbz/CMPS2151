@@ -19,14 +19,19 @@ submitButton.addEventListener('click', (e) => {
     passwordField.setCustomValidity(
       'Your password must be at least 8 characters with at least one letter and one number'
     );
-  } else if (passwordField.value != passwordConfirmField.value) {
+    return false;
+  } else {
+    passwordField.setCustomValidity('');
+  }
+
+  if (passwordField.value != passwordConfirmField.value) {
     passwordConfirmField.setCustomValidity(
       'Your password confirmation does not match'
     );
+    return false;
   } else {
-    passwordField.setCustomValidity('');
-    passwordConfirmField.setCustomValidity(''); // Reset custom validity for passwordConfirmField
-    // Optionally, you can submit the form programmatically here if needed
-    e.target.form.submit();
+    passwordConfirmField.setCustomValidity('');
   }
+
+  return true;
 });
