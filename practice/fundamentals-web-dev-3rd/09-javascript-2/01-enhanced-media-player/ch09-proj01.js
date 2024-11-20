@@ -10,9 +10,15 @@ const videoSource = document.querySelector('video source');
 
 for (const file of files) {
   const handler = () => {
-    video.pause();
+    video.pause(); // stop video
+
+    // change video source
     video.setAttribute('src', `./videos/${file}.mp4`);
     videoSource.setAttribute('src', `./videos/${file}.mp4`);
+
+    // reset time and resume video
+    video.currentTime = 0;
+    video.play();
   };
 
   const img = document.createElement('img');
@@ -20,7 +26,7 @@ for (const file of files) {
   img.setAttribute('alt', file);
   img.addEventListener('click', handler);
 
-  aside.appendChild(img);
+  aside.append(img);
 }
 
 // play button
@@ -60,7 +66,7 @@ video.addEventListener('timeupdate', updateProgressBar);
 const skipButtons = document.querySelectorAll('#controls [data-skip]');
 for (const skipButton of skipButtons) {
   skipButton.addEventListener('click', () => {
-    video.currentTime += Number(skipButton.getAttribute('data-skip'));
+    video.currentTime += Number(skipButton.dataset.skip);
   });
 }
 
