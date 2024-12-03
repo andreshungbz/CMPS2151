@@ -99,8 +99,10 @@ course.onchange = function () {
 
   if (courseIndex === 0) {
     //Section 3: Question 5 - Call showAll function pass the section as parameter
+    showAll(document.querySelector('#section'));
   } else {
     //Section 3: Question 5 - Call filterSelect and pass section and courseList as the category
+    filterSelect(document.querySelector('#section'), courseList);
   }
 }; //end course onchange function
 
@@ -113,8 +115,10 @@ section.onchange = function () {
 
   if (sectionIndex === 0) {
     //Section 3: Question 5 - Call showAll function pass reason as parameter
+    showAll(document.querySelector('#reason'));
   } else {
     //Section 3: Question 5 - Call filterSelect and pass reason and sectionList as the category
+    filterSelect(document.querySelector('#reason'), sectionList);
   }
 }; //end section onchange function
 
@@ -122,7 +126,14 @@ section.onchange = function () {
 Name: showAll( ) 
 @param: selectList
 */
+function showAll(selectList) {
+  const options = selectList.options;
+  const optionLength = options.length;
 
+  for (let i = 0; i < optionLength; ++i) {
+    options[i].style.display = 'block';
+  }
+}
 //end showAll() function **********************************************
 
 /*Section 3: Question 4 **********************************************
@@ -131,18 +142,36 @@ Name: filterSelect( )
 Description: Function filters the category selected to determine which 
 options within that selection list will be displayed
 */
+function filterSelect(selectList, category) {
+  const options = selectList.options;
+  const optionLength = options.length;
 
+  for (let i = 0; i < optionLength; ++i) {
+    if (options[i].className == category) {
+      options[i].style.display = 'block';
+    } else {
+      options[i].style.display = 'none';
+    }
+  }
+}
 //end filterSelect( ) function **********************************************
 
 //Section 3: Question 6****************************************************
+dropCourseBttn.addEventListener('click', () => {
+  const course = document.querySelector('#course').selectedOptions[0].text;
+  const section = document.querySelector('#section').selectedOptions[0].text;
+  const reason = document.querySelector('#reason').selectedOptions[0].text;
+
+  const message = `Dropped ${course} - ${section}, because ${reason}`;
+
+  output.textContent = message;
+});
 
 /*-------------------------------------------------Section 4: Bonus Alert-------------------------------*/
 function showResult() {
   const fullName = document.querySelector('#sname').value;
   const studentID = document.querySelector('#sid').value;
-  const course = document.querySelector('#course').selectedOptions[0].value;
-  const section = document.querySelector('#section').selectedOptions[0].value;
-  const reason = document.querySelector('#reason').selectedOptions[0].value;
+  const message = document.querySelector('#output').textContent;
   const total = document.querySelector('#TotalFees').textContent;
 
   // get first and last names accounting for middle names also
@@ -159,7 +188,7 @@ function showResult() {
   }
 
   alert(
-    `My name is: ${lastName} ${firstName} and my student ID is: ${studentID}. I have: Dropped ${course} - ${section}, because ${reason} And I have wasted $${parseInt(
+    `My name is: ${lastName} ${firstName} and my student ID is: ${message} And I have wasted $${parseInt(
       total.slice(1)
     )} this semester!!`
   );
