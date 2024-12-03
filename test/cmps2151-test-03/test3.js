@@ -188,7 +188,7 @@ function showResult() {
   }
 
   alert(
-    `My name is: ${lastName} ${firstName} and my student ID is: ${message} And I have wasted $${parseInt(
+    `My name is: ${lastName} ${firstName} and my student ID is: ${studentID}. I have: ${message} And I have wasted $${parseInt(
       total.slice(1)
     )} this semester!!`
   );
